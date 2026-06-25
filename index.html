@@ -1,755 +1,705 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Business Insurance Bid Support</title>
-    <meta name="description" content="Commercial insurance bid support for businesses that need competitive quotes, coverage review, renewal help, and practical risk guidance.">
-    <style>
-        :root {
-            --ink: #1e293b;
-            --muted: #64748b;
-            --line: #d8e1ea;
-            --panel: #ffffff;
-            --soft: #f5f7fb;
-            --nav: #12324a;
-            --blue: #0f5f8f;
-            --blue-light: #2f8fbd;
-            --green: #246b5a;
-            --gold: #d99b25;
-            --gold-soft: #fff1c8;
-            --shadow: 0 14px 30px rgba(18, 50, 74, 0.12);
-            --radius: 8px;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            margin: 0;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            color: var(--ink);
-            background: #ffffff;
-            line-height: 1.65;
-        }
-
-        a {
-            color: inherit;
-        }
-
-        .nav {
-            position: sticky;
-            top: 0;
-            z-index: 20;
-            background: rgba(18, 50, 74, 0.94);
-            backdrop-filter: blur(10px);
-            color: #ffffff;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-        }
-
-        .nav-inner {
-            max-width: 1120px;
-            margin: 0 auto;
-            padding: 12px 22px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 18px;
-        }
-
-        .brand {
-            font-weight: 750;
-            letter-spacing: 0.01em;
-            white-space: nowrap;
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 18px;
-            font-size: 0.95rem;
-        }
-
-        .nav-links a {
-            color: #e6eef5;
-            text-decoration: none;
-        }
-
-        .nav-links a:hover {
-            color: #ffffff;
-        }
-
-        .nav-cta {
-            background: var(--gold);
-            color: #17202a !important;
-            padding: 8px 14px;
-            border-radius: 999px;
-            font-weight: 700;
-        }
-
-        .hero {
-            color: #ffffff;
-            background:
-                linear-gradient(112deg, rgba(18, 50, 74, 0.96), rgba(15, 95, 143, 0.88)),
-                linear-gradient(45deg, #12324a 0%, #0f5f8f 52%, #246b5a 100%);
-        }
-
-        .hero-inner {
-            max-width: 1120px;
-            min-height: 610px;
-            margin: 0 auto;
-            padding: 80px 22px 70px;
-            display: grid;
-            grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
-            align-items: center;
-            gap: 48px;
-        }
-
-        .eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 5px 12px;
-            border: 1px solid rgba(255, 255, 255, 0.35);
-            border-radius: 999px;
-            color: #f7df9a;
-            font-size: 0.9rem;
-            font-weight: 700;
-            margin-bottom: 18px;
-        }
-
-        h1,
-        h2,
-        h3,
-        p {
-            margin-top: 0;
-        }
-
-        h1 {
-            margin-bottom: 18px;
-            font-size: clamp(2.35rem, 5vw, 4.25rem);
-            line-height: 1.05;
-            letter-spacing: 0;
-        }
-
-        .hero-copy {
-            max-width: 690px;
-            color: #edf6fb;
-            font-size: 1.1rem;
-        }
-
-        .actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 14px;
-            margin-top: 28px;
-        }
-
-        .button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 48px;
-            padding: 12px 20px;
-            border-radius: 999px;
-            font-weight: 750;
-            text-decoration: none;
-        }
-
-        .button-primary {
-            background: var(--gold);
-            color: #17202a;
-            box-shadow: 0 14px 24px rgba(0, 0, 0, 0.2);
-        }
-
-        .button-secondary {
-            border: 1px solid rgba(255, 255, 255, 0.42);
-            color: #ffffff;
-        }
-
-        .hero-panel {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.22);
-            border-radius: var(--radius);
-            padding: 24px;
-            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
-        }
-
-        .hero-panel h2 {
-            margin-bottom: 12px;
-            color: #ffffff;
-            font-size: 1.25rem;
-        }
-
-        .check-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: grid;
-            gap: 12px;
-        }
-
-        .check-list li {
-            display: grid;
-            grid-template-columns: 26px minmax(0, 1fr);
-            gap: 10px;
-            color: #f4f8fb;
-        }
-
-        .check {
-            width: 26px;
-            height: 26px;
-            border-radius: 999px;
-            background: var(--gold);
-            color: #14202a;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 900;
-            line-height: 1;
-        }
-
-        .mini-metrics {
-            margin-top: 22px;
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 10px;
-        }
-
-        .metric {
-            min-height: 76px;
-            padding: 12px;
-            border-radius: var(--radius);
-            background: rgba(255, 255, 255, 0.12);
-        }
-
-        .metric strong {
-            display: block;
-            color: #ffffff;
-            font-size: 1.15rem;
-        }
-
-        .metric span {
-            display: block;
-            color: #d9e8ef;
-            font-size: 0.82rem;
-            line-height: 1.35;
-        }
-
-        section {
-            padding: 72px 22px;
-        }
-
-        .section-inner {
-            max-width: 1120px;
-            margin: 0 auto;
-        }
-
-        .section-heading {
-            max-width: 760px;
-            margin: 0 auto 34px;
-            text-align: center;
-        }
-
-        .section-heading h2 {
-            margin-bottom: 10px;
-            color: var(--blue);
-            font-size: clamp(1.7rem, 3vw, 2.25rem);
-            line-height: 1.15;
-        }
-
-        .section-heading p {
-            color: var(--muted);
-        }
-
-        .about-text {
-            max-width: 810px;
-            margin: 0 auto 26px;
-            color: #334155;
-        }
-
-        .pill-grid {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 14px;
-        }
-
-        .pill {
-            min-height: 70px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 12px 16px;
-            background: #eef6f4;
-            border: 1px solid #d4e7e1;
-            border-radius: var(--radius);
-            font-size: 0.94rem;
-        }
-
-        .pill-icon,
-        .card-icon {
-            flex: 0 0 auto;
-            width: 36px;
-            height: 36px;
-            border-radius: 999px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--gold-soft);
-            color: #6f4700;
-            font-weight: 900;
-        }
-
-        .soft {
-            background: var(--soft);
-        }
-
-        .grid-2 {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 20px;
-        }
-
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 18px;
-        }
-
-        .card {
-            background: var(--panel);
-            border: 1px solid var(--line);
-            border-radius: var(--radius);
-            padding: 22px;
-            box-shadow: var(--shadow);
-        }
-
-        .card h3 {
-            margin-bottom: 8px;
-            font-size: 1.12rem;
-            color: #162333;
-        }
-
-        .card p {
-            margin-bottom: 0;
-            color: #475569;
-            font-size: 0.97rem;
-        }
-
-        .card-top {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 10px;
-        }
-
-        .card-top h3 {
-            margin-bottom: 0;
-        }
-
-        .industries {
-            background: #e8f1f5;
-        }
-
-        .industry-card {
-            border-left: 5px solid var(--gold);
-        }
-
-        .industry-card strong {
-            display: inline-block;
-            color: var(--blue);
-            margin-top: 8px;
-        }
-
-        .quote {
-            background: #ffffff;
-        }
-
-        .quote-layout {
-            display: grid;
-            grid-template-columns: minmax(0, 0.85fr) minmax(340px, 1.15fr);
-            gap: 30px;
-            align-items: start;
-        }
-
-        .quote-note {
-            padding: 24px;
-            border-radius: var(--radius);
-            background: #eef6f4;
-            border: 1px solid #d4e7e1;
-        }
-
-        .quote-note h2 {
-            color: var(--blue);
-            margin-bottom: 12px;
-        }
-
-        form {
-            display: grid;
-            gap: 14px;
-            padding: 24px;
-            border-radius: var(--radius);
-            background: var(--panel);
-            border: 1px solid var(--line);
-            box-shadow: var(--shadow);
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 14px;
-        }
-
-        label {
-            display: grid;
-            gap: 6px;
-            color: #334155;
-            font-size: 0.92rem;
-            font-weight: 700;
-        }
-
-        input,
-        select,
-        textarea {
-            width: 100%;
-            min-height: 44px;
-            padding: 10px 11px;
-            border: 1px solid #bdc9d4;
-            border-radius: 6px;
-            font: inherit;
-            color: var(--ink);
-            background: #ffffff;
-        }
-
-        textarea {
-            min-height: 116px;
-            resize: vertical;
-        }
-
-        .submit-note {
-            color: var(--muted);
-            font-size: 0.85rem;
-            margin: 0;
-        }
-
-        .submit-button {
-            min-height: 48px;
-            border: 0;
-            border-radius: 999px;
-            background: var(--blue);
-            color: #ffffff;
-            font: inherit;
-            font-weight: 800;
-            cursor: pointer;
-        }
-
-        .contact {
-            background: linear-gradient(115deg, var(--nav), var(--blue));
-            color: #ffffff;
-        }
-
-        .contact .section-heading h2,
-        .contact .section-heading p {
-            color: #ffffff;
-        }
-
-        .contact-cards {
-            max-width: 820px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 16px;
-        }
-
-        .contact-card {
-            min-height: 116px;
-            padding: 18px;
-            border-radius: var(--radius);
-            background: rgba(255, 255, 255, 0.11);
-            border: 1px solid rgba(255, 255, 255, 0.22);
-        }
-
-        .contact-card span {
-            display: block;
-            color: #d9e8ef;
-            font-size: 0.86rem;
-        }
-
-        .contact-card a {
-            display: block;
-            margin-top: 6px;
-            color: #fff4ce;
-            font-weight: 800;
-            text-decoration: none;
-            word-break: break-word;
-        }
-
-        footer {
-            padding: 18px 22px;
-            background: #07111c;
-            color: #aebdca;
-            text-align: center;
-            font-size: 0.86rem;
-        }
-
-        footer a {
-            color: #ffffff;
-        }
-
-        @media (max-width: 900px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero-inner,
-            .quote-layout,
-            .grid-2,
-            .grid-3,
-            .pill-grid,
-            .contact-cards {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-inner {
-                min-height: auto;
-                padding-top: 64px;
-            }
-        }
-
-        @media (max-width: 620px) {
-            .nav-inner {
-                padding-inline: 16px;
-            }
-
-            section {
-                padding: 56px 16px;
-            }
-
-            .hero-inner {
-                padding: 58px 16px 56px;
-                gap: 28px;
-            }
-
-            .actions,
-            .form-row,
-            .mini-metrics {
-                grid-template-columns: 1fr;
-            }
-
-            .button {
-                width: 100%;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Public Sector Flow | Insurance Bid Support</title>
+  <meta name="description" content="Insurance bid support for schools, municipalities, public agencies, and public sector organizations that need coverage review, RFP readiness, and renewal guidance.">
+  <style>
+    :root {
+      --ink: #172233;
+      --muted: #607080;
+      --line: #d7e1ea;
+      --soft: #f4f7fa;
+      --mist: #e8f2f2;
+      --nav: #12324a;
+      --blue: #0f5f8f;
+      --green: #246b5a;
+      --gold: #d99b25;
+      --gold-soft: #fff1c8;
+      --white: #ffffff;
+      --shadow: 0 14px 30px rgba(18, 50, 74, 0.12);
+      --radius: 8px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--white);
+      line-height: 1.65;
+    }
+
+    a { color: inherit; }
+    h1, h2, h3, p { margin-top: 0; }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(18, 50, 74, 0.95);
+      color: var(--white);
+      border-bottom: 1px solid rgba(255,255,255,0.14);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 12px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: 0;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      color: #e8f0f6;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover { color: var(--white); }
+
+    .nav-cta {
+      background: var(--gold);
+      color: #17202a !important;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-weight: 800;
+    }
+
+    .hero {
+      color: var(--white);
+      background:
+        linear-gradient(112deg, rgba(18, 50, 74, 0.96), rgba(15, 95, 143, 0.88)),
+        linear-gradient(45deg, #12324a 0%, #0f5f8f 52%, #246b5a 100%);
+    }
+
+    .hero-inner {
+      max-width: 1120px;
+      min-height: 610px;
+      margin: 0 auto;
+      padding: 80px 22px 70px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+      align-items: center;
+      gap: 48px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      padding: 5px 12px;
+      border: 1px solid rgba(255,255,255,0.35);
+      border-radius: 999px;
+      color: #f7df9a;
+      font-size: 0.9rem;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin-bottom: 18px;
+      font-size: clamp(2.25rem, 5vw, 4.2rem);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .hero-copy {
+      max-width: 700px;
+      color: #edf6fb;
+      font-size: 1.1rem;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 12px 20px;
+      border-radius: 999px;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .button-primary {
+      background: var(--gold);
+      color: #17202a;
+      box-shadow: 0 14px 24px rgba(0,0,0,0.2);
+    }
+
+    .button-secondary {
+      border: 1px solid rgba(255,255,255,0.42);
+      color: var(--white);
+    }
+
+    .hero-panel {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 18px 45px rgba(0,0,0,0.18);
+    }
+
+    .hero-panel h2 {
+      margin-bottom: 12px;
+      color: var(--white);
+      font-size: 1.25rem;
+    }
+
+    .check-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 12px;
+    }
+
+    .check-list li {
+      display: grid;
+      grid-template-columns: 32px minmax(0, 1fr);
+      gap: 10px;
+      color: #f4f8fb;
+    }
+
+    .check {
+      width: 32px;
+      height: 26px;
+      border-radius: 999px;
+      background: var(--gold);
+      color: #14202a;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.72rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .mini-metrics {
+      margin-top: 22px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .metric {
+      min-height: 76px;
+      padding: 12px;
+      border-radius: var(--radius);
+      background: rgba(255,255,255,0.12);
+    }
+
+    .metric strong {
+      display: block;
+      color: var(--white);
+      font-size: 1.15rem;
+    }
+
+    .metric span {
+      display: block;
+      color: #d9e8ef;
+      font-size: 0.82rem;
+      line-height: 1.35;
+    }
+
+    section { padding: 72px 22px; }
+
+    .section-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .section-heading {
+      max-width: 780px;
+      margin: 0 auto 34px;
+      text-align: center;
+    }
+
+    .section-heading h2 {
+      margin-bottom: 10px;
+      color: var(--blue);
+      font-size: clamp(1.7rem, 3vw, 2.25rem);
+      line-height: 1.15;
+    }
+
+    .section-heading p { color: var(--muted); }
+
+    .about-text {
+      max-width: 820px;
+      margin: 0 auto 26px;
+      color: #334155;
+    }
+
+    .pill-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .pill {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      background: var(--mist);
+      border: 1px solid #d4e7e1;
+      border-radius: var(--radius);
+      font-size: 0.94rem;
+    }
+
+    .pill-icon,
+    .card-icon {
+      flex: 0 0 auto;
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--gold-soft);
+      color: #6f4700;
+      font-weight: 900;
+    }
+
+    .soft { background: var(--soft); }
+    .industries { background: #e8f1f5; }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      margin-bottom: 8px;
+      font-size: 1.12rem;
+      color: #162333;
+    }
+
+    .card p {
+      margin-bottom: 0;
+      color: #475569;
+      font-size: 0.97rem;
+    }
+
+    .card-top {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .card-top h3 { margin-bottom: 0; }
+
+    .industry-card { border-left: 5px solid var(--gold); }
+
+    .industry-card strong {
+      display: inline-block;
+      color: var(--blue);
+      margin-top: 8px;
+    }
+
+    .quote-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 0.85fr) minmax(340px, 1.15fr);
+      gap: 30px;
+      align-items: start;
+    }
+
+    .quote-note {
+      padding: 24px;
+      border-radius: var(--radius);
+      background: var(--mist);
+      border: 1px solid #d4e7e1;
+    }
+
+    .quote-note h2 {
+      color: var(--blue);
+      margin-bottom: 12px;
+    }
+
+    .quote-note .check-list li { color: #334155; }
+
+    form {
+      display: grid;
+      gap: 14px;
+      padding: 24px;
+      border-radius: var(--radius);
+      background: var(--white);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    label {
+      display: grid;
+      gap: 6px;
+      color: #334155;
+      font-size: 0.92rem;
+      font-weight: 800;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      min-height: 44px;
+      padding: 10px 11px;
+      border: 1px solid #bdc9d4;
+      border-radius: 6px;
+      font: inherit;
+      color: var(--ink);
+      background: var(--white);
+    }
+
+    textarea {
+      min-height: 116px;
+      resize: vertical;
+    }
+
+    .submit-button {
+      min-height: 48px;
+      border: 0;
+      border-radius: 999px;
+      background: var(--blue);
+      color: var(--white);
+      font: inherit;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .submit-note {
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin: 0;
+    }
+
+    .contact {
+      background: linear-gradient(115deg, var(--nav), var(--blue));
+      color: var(--white);
+    }
+
+    .contact .section-heading h2,
+    .contact .section-heading p { color: var(--white); }
+
+    .contact-cards {
+      max-width: 840px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .contact-card {
+      min-height: 116px;
+      padding: 18px;
+      border-radius: var(--radius);
+      background: rgba(255,255,255,0.11);
+      border: 1px solid rgba(255,255,255,0.22);
+    }
+
+    .contact-card span {
+      display: block;
+      color: #d9e8ef;
+      font-size: 0.86rem;
+    }
+
+    .contact-card a {
+      display: block;
+      margin-top: 6px;
+      color: #fff4ce;
+      font-weight: 900;
+      text-decoration: none;
+      word-break: break-word;
+    }
+
+    footer {
+      padding: 18px 22px;
+      background: #07111c;
+      color: #aebdca;
+      text-align: center;
+      font-size: 0.86rem;
+    }
+
+    footer a { color: var(--white); }
+
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .hero-inner,
+      .quote-layout,
+      .grid-2,
+      .grid-3,
+      .pill-grid,
+      .contact-cards {
+        grid-template-columns: 1fr;
+      }
+      .hero-inner {
+        min-height: auto;
+        padding-top: 64px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .nav-inner { padding-inline: 16px; }
+      section { padding: 56px 16px; }
+      .hero-inner {
+        padding: 58px 16px 56px;
+        gap: 28px;
+      }
+      .actions,
+      .form-row,
+      .mini-metrics {
+        grid-template-columns: 1fr;
+      }
+      .button { width: 100%; }
+    }
+  </style>
 </head>
 <body>
-    <nav class="nav">
-        <div class="nav-inner">
-            <div class="brand">Business Insurance Bid Support</div>
-            <div class="nav-links">
-                <a href="#about">About</a>
-                <a href="#services">Services</a>
-                <a href="#industries">Industries</a>
-                <a href="#quote">Request a bid</a>
-                <a href="#contact">Contact</a>
-                <a href="#quote" class="nav-cta">Start a review</a>
-            </div>
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="brand">Public Sector Flow</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#coverage">Coverage</a>
+        <a href="#industries">Who we help</a>
+        <a href="#quote">Request a review</a>
+        <a href="#quote" class="nav-cta">Start a bid review</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="hero-inner">
+      <div>
+        <div class="eyebrow">Coverage clarity for public sector renewals.</div>
+        <h1>Insurance bid support for schools, municipalities, and public agencies.</h1>
+        <p class="hero-copy">
+          Public Sector Flow helps public organizations prepare cleaner insurance submissions, compare renewal options, and understand coverage for liability, property, workers compensation, cyber, auto, and public entity risk.
+        </p>
+        <div class="actions">
+          <a class="button button-primary" href="#quote">Request a bid review</a>
+          <a class="button button-secondary" href="#services">See public sector support</a>
         </div>
-    </nav>
+      </div>
 
-    <header class="hero" id="top">
-        <div class="hero-inner">
-            <div>
-                <div class="eyebrow">Commercial coverage. Better bids. Less confusion.</div>
-                <h1>Business insurance bids that help protect your company.</h1>
-                <p class="hero-copy">
-                    Get help reviewing current coverage, preparing for renewals, and comparing commercial insurance options for liability, property, workers compensation, cyber, auto, and industry-specific business risks.
-                </p>
-                <div class="actions">
-                    <a class="button button-primary" href="#quote">Request a bid review</a>
-                    <a class="button button-secondary" href="#services">See coverage support</a>
-                </div>
-            </div>
-
-            <div class="hero-panel" aria-label="Business insurance support summary">
-                <h2>Built for business owners who need clarity before renewal.</h2>
-                <ul class="check-list">
-                    <li><span class="check">âœ“</span><span>Compare commercial insurance bids across the coverages your business actually needs.</span></li>
-                    <li><span class="check">âœ“</span><span>Review limits, deductibles, exclusions, certificates, contracts, and claim concerns.</span></li>
-                    <li><span class="check">âœ“</span><span>Prepare a clean submission so carriers and brokers can respond with stronger options.</span></li>
-                </ul>
-                <div class="mini-metrics">
-                    <div class="metric"><strong>GL</strong><span>General liability</span></div>
-                    <div class="metric"><strong>WC</strong><span>Workers comp</span></div>
-                    <div class="metric"><strong>E&O</strong><span>Professional liability</span></div>
-                </div>
-            </div>
+      <div class="hero-panel" aria-label="Public sector insurance support summary">
+        <h2>Built for administrators who need clarity before the next RFP or renewal.</h2>
+        <ul class="check-list">
+          <li><span class="check">OK</span><span>Organize exposure data, schedules, loss runs, and current policies before bids are requested.</span></li>
+          <li><span class="check">OK</span><span>Review limits, deductibles, exclusions, certificates, contracts, and claim concerns.</span></li>
+          <li><span class="check">OK</span><span>Prepare a clearer submission so brokers and carriers can respond with stronger options.</span></li>
+        </ul>
+        <div class="mini-metrics">
+          <div class="metric"><strong>PEL</strong><span>Public entity liability</span></div>
+          <div class="metric"><strong>WC</strong><span>Workers comp</span></div>
+          <div class="metric"><strong>CY</strong><span>Cyber risk</span></div>
         </div>
-    </header>
+      </div>
+    </div>
+  </header>
 
-    <section id="about">
-        <div class="section-inner">
-            <div class="section-heading">
-                <h2>Commercial insurance help without the runaround.</h2>
-                <p>Practical support for businesses that want competitive bids, cleaner coverage, and a better handle on risk.</p>
-            </div>
-            <div class="about-text">
-                <p>
-                    Business insurance is not just a yearly bill. It affects contracts, leases, lenders, employees, vendors, vehicles, property, claims, and the ability to keep operating when something goes wrong.
-                </p>
-                <p>
-                    We help organize the information a broker or carrier needs, identify coverage gaps, and make the renewal or bidding process easier to understand. The goal is simple: protect the business, reduce surprises, and give decision makers a clear comparison before they choose.
-                </p>
-            </div>
-            <div class="pill-grid">
-                <div class="pill"><span class="pill-icon">$</span><span>Competitive quote and renewal support.</span></div>
-                <div class="pill"><span class="pill-icon">!</span><span>Coverage gap and risk review.</span></div>
-                <div class="pill"><span class="pill-icon">#</span><span>Industry-friendly bid keywords and submissions.</span></div>
-            </div>
+  <section id="about">
+    <div class="section-inner">
+      <div class="section-heading">
+        <h2>Public sector insurance help without the runaround.</h2>
+        <p>Practical support for organizations that want cleaner bid packages, better coverage comparisons, and a clearer handle on risk.</p>
+      </div>
+      <div class="about-text">
+        <p>
+          Public sector insurance is not just a yearly renewal. It affects board decisions, budget planning, contracts, school buildings, municipal property, employees, vehicles, public services, claims, and community trust.
+        </p>
+        <p>
+          We help organize the information a broker or carrier needs, identify coverage questions, and make the renewal or bidding process easier to understand. The goal is simple: protect the organization, reduce surprises, and give decision makers a clear comparison before they choose.
+        </p>
+      </div>
+      <div class="pill-grid">
+        <div class="pill"><span class="pill-icon">$</span><span>Renewal and budget planning support.</span></div>
+        <div class="pill"><span class="pill-icon">!</span><span>Coverage question and risk review.</span></div>
+        <div class="pill"><span class="pill-icon">#</span><span>RFP-friendly keywords and bid preparation.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="soft" id="services">
+    <div class="section-inner">
+      <div class="section-heading">
+        <h2>What we help with</h2>
+        <p>Focused support around insurance bids, renewal prep, public entity risk, and coverage communication.</p>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-top"><span class="card-icon">1</span><h3>Public sector bid support</h3></div>
+          <p>Prepare entity details, coverage needs, payroll, property schedules, vehicle lists, certificates, current policies, and loss runs so bids are easier to request and compare.</p>
         </div>
-    </section>
-
-    <section class="soft" id="services">
-        <div class="section-inner">
-            <div class="section-heading">
-                <h2>What we help with</h2>
-                <p>Focused support around commercial insurance buying, renewal prep, and business risk communication.</p>
-            </div>
-            <div class="grid-2">
-                <div class="card">
-                    <div class="card-top"><span class="card-icon">1</span><h3>Commercial insurance bid support</h3></div>
-                    <p>Prepare business details, coverage needs, payroll, revenue, locations, vehicles, certificates, and current policy information so bids are easier to request and compare.</p>
-                </div>
-                <div class="card">
-                    <div class="card-top"><span class="card-icon">2</span><h3>Policy and coverage review</h3></div>
-                    <p>Review existing limits, deductibles, endorsements, exclusions, contract requirements, and renewal dates so you know what needs attention before shopping coverage.</p>
-                </div>
-                <div class="card">
-                    <div class="card-top"><span class="card-icon">3</span><h3>Business risk assessment</h3></div>
-                    <p>Identify common exposures tied to your industry, including property, liability, employees, vehicles, professional services, cyber risk, and customer or vendor contracts.</p>
-                </div>
-                <div class="card">
-                    <div class="card-top"><span class="card-icon">4</span><h3>Renewal and claims support</h3></div>
-                    <p>Organize renewal timelines, loss runs, claims history, COI needs, and follow-up questions so the process feels more controlled and less reactive.</p>
-                </div>
-            </div>
+        <div class="card">
+          <div class="card-top"><span class="card-icon">2</span><h3>Policy and coverage review</h3></div>
+          <p>Review existing limits, deductibles, endorsements, exclusions, interlocal agreements, vendor requirements, and renewal dates so you know what needs attention before bids go out.</p>
         </div>
-    </section>
-
-    <section id="coverage">
-        <div class="section-inner">
-            <div class="section-heading">
-                <h2>Coverage areas businesses commonly request</h2>
-                <p>Use this section to match the words customers search for when they are looking for business insurance bids.</p>
-            </div>
-            <div class="grid-3">
-                <div class="card"><h3>Core business coverage</h3><p>General liability, commercial property, business owners policy, umbrella, excess liability, and commercial package policies.</p></div>
-                <div class="card"><h3>People and operations</h3><p>Workers compensation, employment practices liability, employee dishonesty, safety programs, and loss-prevention support.</p></div>
-                <div class="card"><h3>Professional and digital risk</h3><p>Errors and omissions, professional liability, cyber liability, directors and officers, and management liability.</p></div>
-                <div class="card"><h3>Vehicles and equipment</h3><p>Commercial auto, hired and non-owned auto, inland marine, equipment coverage, tools, cargo, and fleet-related exposures.</p></div>
-                <div class="card"><h3>Construction and property</h3><p>Contractor insurance, builders risk, surety bonds, real estate insurance, habitational property, and property owner coverage.</p></div>
-                <div class="card"><h3>Special business needs</h3><p>Restaurant, retail, healthcare, manufacturing, warehouse, distribution, hospitality, and professional services insurance.</p></div>
-            </div>
+        <div class="card">
+          <div class="card-top"><span class="card-icon">3</span><h3>Public entity risk review</h3></div>
+          <p>Identify common exposures tied to schools, municipalities, agencies, and districts, including property, liability, employees, vehicles, cyber risk, governance, and public services.</p>
         </div>
-    </section>
-
-    <section class="industries" id="industries">
-        <div class="section-inner">
-            <div class="section-heading">
-                <h2>Industries we can support</h2>
-                <p>The site can be expanded later into dedicated pages for the industries you want to target most.</p>
-            </div>
-            <div class="grid-2">
-                <div class="card industry-card"><h3>Contractors and construction</h3><p>General contractors, subcontractors, trades, builders risk, certificates, contract requirements, tools, equipment, and workers comp.</p><strong>Common ask: lower renewal pressure and cleaner COI handling.</strong></div>
-                <div class="card industry-card"><h3>Real estate and property owners</h3><p>Commercial property, habitational risks, lessor's risk, property managers, umbrella liability, leases, lenders, and tenant requirements.</p><strong>Common ask: protect assets while meeting lender and lease obligations.</strong></div>
-                <div class="card industry-card"><h3>Retail, restaurants, and hospitality</h3><p>Premises liability, property, spoilage, liquor liability, cyber, employment risk, equipment, and business interruption concerns.</p><strong>Common ask: practical coverage without slowing daily operations.</strong></div>
-                <div class="card industry-card"><h3>Healthcare and professional services</h3><p>Professional liability, general liability, cyber, employment practices, office property, client contracts, and compliance-related exposures.</p><strong>Common ask: coverage that matches professional and operational risk.</strong></div>
-            </div>
+        <div class="card">
+          <div class="card-top"><span class="card-icon">4</span><h3>Renewal and claims support</h3></div>
+          <p>Organize renewal timelines, loss runs, claims history, COI needs, board questions, and follow-up items so the process feels more controlled and less reactive.</p>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <section class="quote" id="quote">
-        <div class="section-inner quote-layout">
-            <div class="quote-note">
-                <h2>Request a commercial insurance bid review</h2>
-                <p>
-                    Use this form as a starting point. For Cloudflare Pages, we can connect it later to Formspree, Basin, Tally, Google Forms, or a Cloudflare Worker, depending on how simple you want the first version to be.
-                </p>
-                <ul class="check-list">
-                    <li><span class="check">âœ“</span><span style="color:#334155;">Business name, industry, and renewal timeline.</span></li>
-                    <li><span class="check">âœ“</span><span style="color:#334155;">Coverage types you want quoted or reviewed.</span></li>
-                    <li><span class="check">âœ“</span><span style="color:#334155;">Current carrier, policies, loss runs, or claim concerns if available.</span></li>
-                </ul>
-            </div>
+  <section id="coverage">
+    <div class="section-inner">
+      <div class="section-heading">
+        <h2>Coverage areas public organizations commonly review</h2>
+        <p>Use this section to match the words administrators, finance teams, and public sector decision makers search for before renewal.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card"><h3>Public entity liability</h3><p>General liability, law enforcement liability, educators legal liability, public officials liability, umbrella, and excess liability.</p></div>
+        <div class="card"><h3>Property and facilities</h3><p>School buildings, municipal property, equipment, inland marine, builders risk, flood concerns, and scheduled assets.</p></div>
+        <div class="card"><h3>People and employment</h3><p>Workers compensation, employment practices liability, employee dishonesty, safety programs, and loss-prevention support.</p></div>
+        <div class="card"><h3>Vehicles and fleets</h3><p>Public auto, buses, police vehicles, service vehicles, hired and non-owned auto, and equipment-related exposures.</p></div>
+        <div class="card"><h3>Cyber and data risk</h3><p>Cyber liability, ransomware readiness, privacy concerns, student or resident data, payment systems, and incident response.</p></div>
+        <div class="card"><h3>Bid and RFP readiness</h3><p>Coverage summaries, schedules, loss runs, renewal calendars, carrier questions, broker submissions, and board-ready comparisons.</p></div>
+      </div>
+    </div>
+  </section>
 
-            <form action="mailto:quotes@example.com" method="post" enctype="text/plain">
-                <div class="form-row">
-                    <label>Business name
-                        <input name="business_name" type="text" autocomplete="organization">
-                    </label>
-                    <label>Contact name
-                        <input name="contact_name" type="text" autocomplete="name">
-                    </label>
-                </div>
-                <div class="form-row">
-                    <label>Email
-                        <input name="email" type="email" autocomplete="email">
-                    </label>
-                    <label>Phone
-                        <input name="phone" type="tel" autocomplete="tel">
-                    </label>
-                </div>
-                <div class="form-row">
-                    <label>Industry
-                        <input name="industry" type="text" placeholder="Construction, real estate, retail, healthcare...">
-                    </label>
-                    <label>Renewal date
-                        <input name="renewal_date" type="text" placeholder="Month / year or exact date">
-                    </label>
-                </div>
-                <label>Coverage needed
-                    <select name="coverage_needed">
-                        <option value="">Select one</option>
-                        <option>General liability</option>
-                        <option>Workers compensation</option>
-                        <option>Commercial property</option>
-                        <option>Commercial auto</option>
-                        <option>Professional liability / E&O</option>
-                        <option>Cyber liability</option>
-                        <option>Multiple coverages</option>
-                        <option>Not sure yet</option>
-                    </select>
-                </label>
-                <label>What are you looking for?
-                    <textarea name="message" placeholder="Tell us about the business, current insurance, bid request, renewal concerns, or coverage questions."></textarea>
-                </label>
-                <button class="submit-button" type="submit">Send bid review request</button>
-                <p class="submit-note">Placeholder form only. Replace <strong>quotes@example.com</strong> with your real forwarding email before launch.</p>
-            </form>
+  <section class="industries" id="industries">
+    <div class="section-inner">
+      <div class="section-heading">
+        <h2>Public sector groups we can support</h2>
+        <p>The site can be expanded later into dedicated pages for the public sector groups you want to target most.</p>
+      </div>
+      <div class="grid-2">
+        <div class="card industry-card"><h3>Schools and districts</h3><p>Public and private schools, charter schools, districts, administrators, student-related exposures, buses, property, cyber, and educators legal liability.</p><strong>Common ask: clear renewal options before board or budget review.</strong></div>
+        <div class="card industry-card"><h3>Municipalities and counties</h3><p>Townships, villages, cities, counties, police, public works, parks, utilities, public property, fleets, and employment-related exposures.</p><strong>Common ask: protect public services while managing insurance cost pressure.</strong></div>
+        <div class="card industry-card"><h3>Public authorities and districts</h3><p>Fire districts, water districts, transportation authorities, libraries, housing authorities, special districts, and quasi-public organizations.</p><strong>Common ask: build a cleaner submission for complex public risk.</strong></div>
+        <div class="card industry-card"><h3>Nonprofits serving public contracts</h3><p>Community providers, social service organizations, contractors to public agencies, healthcare programs, and grant-funded operations.</p><strong>Common ask: coverage that satisfies contracts, funders, and operational needs.</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="quote">
+    <div class="section-inner quote-layout">
+      <div class="quote-note">
+        <h2>Request a public sector insurance bid review</h2>
+        <p>
+          Use this form as a starting point. We can connect it later to a dedicated email address or secure form once the domain is registered.
+        </p>
+        <ul class="check-list">
+          <li><span class="check">OK</span><span>Organization name, type, and renewal timeline.</span></li>
+          <li><span class="check">OK</span><span>Coverage types you want quoted or reviewed.</span></li>
+          <li><span class="check">OK</span><span>Current carrier, policies, loss runs, RFP concerns, or claims questions if available.</span></li>
+        </ul>
+      </div>
+
+      <form action="mailto:sam@samg-consulting.com" method="post" enctype="text/plain">
+        <div class="form-row">
+          <label>Organization name
+            <input name="organization_name" type="text" autocomplete="organization">
+          </label>
+          <label>Contact name
+            <input name="contact_name" type="text" autocomplete="name">
+          </label>
         </div>
-    </section>
-
-    <section class="contact" id="contact">
-        <div class="section-inner">
-            <div class="section-heading">
-                <h2>Let's talk through the next bid.</h2>
-                <p>When you are ready, we can connect this page to a domain, email address, and GitHub or Cloudflare Pages deployment.</p>
-            </div>
-            <div class="contact-cards">
-                <div class="contact-card"><span>Email</span><a href="mailto:quotes@example.com">quotes@example.com</a></div>
-                <div class="contact-card"><span>Phone</span><a href="tel:+10000000000">Add phone number</a></div>
-                <div class="contact-card"><span>Website</span><a href="#top">Add domain name</a></div>
-            </div>
+        <div class="form-row">
+          <label>Email
+            <input name="email" type="email" autocomplete="email">
+          </label>
+          <label>Phone
+            <input name="phone" type="tel" autocomplete="tel">
+          </label>
         </div>
-    </section>
+        <div class="form-row">
+          <label>Organization type
+            <input name="organization_type" type="text" placeholder="School, municipality, authority, nonprofit...">
+          </label>
+          <label>Renewal date
+            <input name="renewal_date" type="text" placeholder="Month / year or exact date">
+          </label>
+        </div>
+        <label>Coverage needed
+          <select name="coverage_needed">
+            <option value="">Select one</option>
+            <option>Public entity liability</option>
+            <option>Educators legal liability</option>
+            <option>Workers compensation</option>
+            <option>Property coverage</option>
+            <option>Public auto / fleet</option>
+            <option>Cyber liability</option>
+            <option>Umbrella / excess liability</option>
+            <option>Multiple coverages</option>
+            <option>Not sure yet</option>
+          </select>
+        </label>
+        <label>What are you looking for?
+          <textarea name="message" placeholder="Tell us about the organization, current insurance, bid request, renewal concerns, RFP timeline, or coverage questions."></textarea>
+        </label>
+        <button class="submit-button" type="submit">Send bid review request</button>
+        <p class="submit-note">Temporary contact route. A dedicated Public Sector Flow email can be added after the domain is registered.</p>
+      </form>
+    </div>
+  </section>
 
-    <footer>
-        <div>Copyright 2026 Business Insurance Bid Support | <a href="#top">Back to top</a></div>
-    </footer>
+  <section class="contact" id="contact">
+    <div class="section-inner">
+      <div class="section-heading">
+        <h2>Let's talk through the next public sector renewal.</h2>
+        <p>Use the live GitHub Pages site now. A custom domain and dedicated email can be added later when the project is ready.</p>
+      </div>
+      <div class="contact-cards">
+        <div class="contact-card"><span>Email</span><a href="mailto:sam@samg-consulting.com">sam@samg-consulting.com</a></div>
+        <div class="contact-card"><span>Focus</span><a href="#industries">Schools and municipalities</a></div>
+        <div class="contact-card"><span>Current website</span><a href="https://samginz.github.io/publicsectorflow/">GitHub Pages</a></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div>Copyright 2026 Public Sector Flow | <a href="#top">Back to top</a></div>
+  </footer>
 </body>
 </html>
