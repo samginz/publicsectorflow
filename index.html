@@ -337,6 +337,85 @@
       margin-top: 8px;
     }
 
+    .reason-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .reason-card {
+      min-height: 176px;
+      padding: 18px;
+      border-radius: var(--radius);
+      background: var(--white);
+      border: 1px solid var(--line);
+      box-shadow: 0 10px 22px rgba(18, 50, 74, 0.08);
+    }
+
+    .reason-number {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+      background: var(--nav);
+      color: var(--white);
+      font-weight: 900;
+      font-size: 0.9rem;
+    }
+
+    .reason-card h3 {
+      margin-bottom: 7px;
+      font-size: 1rem;
+      line-height: 1.25;
+    }
+
+    .reason-card p {
+      margin-bottom: 0;
+      color: #536273;
+      font-size: 0.92rem;
+      line-height: 1.55;
+    }
+
+    .outcome-band {
+      background: linear-gradient(135deg, #102b42, #184c62 58%, #246b5a);
+      color: var(--white);
+    }
+
+    .outcome-band .section-heading h2,
+    .outcome-band .section-heading p {
+      color: var(--white);
+    }
+
+    .outcome-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .outcome-card {
+      min-height: 150px;
+      padding: 20px;
+      border-radius: var(--radius);
+      background: rgba(255,255,255,0.11);
+      border: 1px solid rgba(255,255,255,0.22);
+    }
+
+    .outcome-card strong {
+      display: block;
+      margin-bottom: 8px;
+      color: #fff4ce;
+      font-size: 1.02rem;
+    }
+
+    .outcome-card p {
+      margin-bottom: 0;
+      color: #e8f0f6;
+      font-size: 0.94rem;
+    }
+
     .quote-layout {
       display: grid;
       grid-template-columns: minmax(0, 0.85fr) minmax(340px, 1.15fr);
@@ -470,6 +549,8 @@
       .quote-layout,
       .grid-2,
       .grid-3,
+      .reason-grid,
+      .outcome-grid,
       .pill-grid,
       .contact-cards {
         grid-template-columns: 1fr;
@@ -502,6 +583,7 @@
       <div class="brand">Public Sector Flow</div>
       <div class="nav-links">
         <a href="#about">About</a>
+        <a href="#reasons">Reasons</a>
         <a href="#services">Services</a>
         <a href="#coverage">Coverage</a>
         <a href="#industries">Who we help</a>
@@ -528,9 +610,9 @@
       <div class="hero-panel" aria-label="Public sector insurance support summary">
         <h2>Built for administrators who need clarity before the next RFP or renewal.</h2>
         <ul class="check-list">
-          <li><span class="check">OK</span><span>Organize exposure data, schedules, loss runs, and current policies before bids are requested.</span></li>
-          <li><span class="check">OK</span><span>Review limits, deductibles, exclusions, certificates, contracts, and claim concerns.</span></li>
-          <li><span class="check">OK</span><span>Prepare a clearer submission so brokers and carriers can respond with stronger options.</span></li>
+          <li><span class="check">RFP</span><span>Organize exposure data, schedules, loss runs, and current policies before bids are requested.</span></li>
+          <li><span class="check">REV</span><span>Review limits, deductibles, exclusions, certificates, contracts, and claim concerns.</span></li>
+          <li><span class="check">BID</span><span>Prepare a clearer submission so brokers and carriers can respond with stronger options.</span></li>
         </ul>
         <div class="mini-metrics">
           <div class="metric"><strong>PEL</strong><span>Public entity liability</span></div>
@@ -544,8 +626,8 @@
   <section id="about">
     <div class="section-inner">
       <div class="section-heading">
-        <h2>Public sector insurance help without the runaround.</h2>
-        <p>Practical support for organizations that want cleaner bid packages, better coverage comparisons, and a clearer handle on risk.</p>
+        <h2>Public sector insurance support with a clearer process.</h2>
+        <p>Practical help for organizations that want cleaner bid packages, better coverage comparisons, and a stronger handle on risk.</p>
       </div>
       <div class="about-text">
         <p>
@@ -563,7 +645,43 @@
     </div>
   </section>
 
-  <section class="soft" id="services">
+  <section class="soft" id="reasons">
+    <div class="section-inner">
+      <div class="section-heading">
+        <h2>Top reasons public organizations use a bid review process</h2>
+        <p>A stronger insurance submission helps boards, administrators, and finance teams compare options with fewer surprises.</p>
+      </div>
+      <div class="reason-grid">
+        <div class="reason-card">
+          <span class="reason-number">1</span>
+          <h3>Cleaner RFP preparation</h3>
+          <p>Organize schedules, claims history, exposures, and coverage questions before markets are approached.</p>
+        </div>
+        <div class="reason-card">
+          <span class="reason-number">2</span>
+          <h3>Better bid comparison</h3>
+          <p>Look beyond price by comparing limits, deductibles, exclusions, carrier terms, and service expectations.</p>
+        </div>
+        <div class="reason-card">
+          <span class="reason-number">3</span>
+          <h3>Fewer coverage surprises</h3>
+          <p>Surface gaps and confusing policy language before a claim, contract, or board question creates pressure.</p>
+        </div>
+        <div class="reason-card">
+          <span class="reason-number">4</span>
+          <h3>Board-ready clarity</h3>
+          <p>Turn complex insurance details into practical talking points for budget and renewal conversations.</p>
+        </div>
+        <div class="reason-card">
+          <span class="reason-number">5</span>
+          <h3>More controlled timelines</h3>
+          <p>Reduce last-minute renewal stress by tracking key dates, missing items, and follow-up questions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
     <div class="section-inner">
       <div class="section-heading">
         <h2>What we help with</h2>
@@ -594,7 +712,7 @@
     <div class="section-inner">
       <div class="section-heading">
         <h2>Coverage areas public organizations commonly review</h2>
-        <p>Use this section to match the words administrators, finance teams, and public sector decision makers search for before renewal.</p>
+        <p>Clear language for common renewal, RFP, and board-level coverage conversations.</p>
       </div>
       <div class="grid-3">
         <div class="card"><h3>Public entity liability</h3><p>General liability, law enforcement liability, educators legal liability, public officials liability, umbrella, and excess liability.</p></div>
@@ -611,13 +729,40 @@
     <div class="section-inner">
       <div class="section-heading">
         <h2>Public sector groups we can support</h2>
-        <p>The site can be expanded later into dedicated pages for the public sector groups you want to target most.</p>
+        <p>Focused support for organizations that carry public responsibilities, public assets, and public accountability.</p>
       </div>
       <div class="grid-2">
-        <div class="card industry-card"><h3>Schools and districts</h3><p>Public and private schools, charter schools, districts, administrators, student-related exposures, buses, property, cyber, and educators legal liability.</p><strong>Common ask: clear renewal options before board or budget review.</strong></div>
+        <div class="card industry-card"><h3>Schools and districts</h3><p>Public schools, charter schools, districts, administrators, student-related exposures, buses, property, cyber, and educators legal liability.</p><strong>Common ask: clear renewal options before board or budget review.</strong></div>
         <div class="card industry-card"><h3>Municipalities and counties</h3><p>Townships, villages, cities, counties, police, public works, parks, utilities, public property, fleets, and employment-related exposures.</p><strong>Common ask: protect public services while managing insurance cost pressure.</strong></div>
         <div class="card industry-card"><h3>Public authorities and districts</h3><p>Fire districts, water districts, transportation authorities, libraries, housing authorities, special districts, and quasi-public organizations.</p><strong>Common ask: build a cleaner submission for complex public risk.</strong></div>
         <div class="card industry-card"><h3>Nonprofits serving public contracts</h3><p>Community providers, social service organizations, contractors to public agencies, healthcare programs, and grant-funded operations.</p><strong>Common ask: coverage that satisfies contracts, funders, and operational needs.</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="outcome-band" id="outcomes">
+    <div class="section-inner">
+      <div class="section-heading">
+        <h2>Common outcomes from a more organized renewal</h2>
+        <p>Public Sector Flow is built around practical improvements, not inflated promises.</p>
+      </div>
+      <div class="outcome-grid">
+        <div class="outcome-card">
+          <strong>More complete submissions</strong>
+          <p>Fewer missing schedules, unclear exposures, or unanswered questions before bids are requested.</p>
+        </div>
+        <div class="outcome-card">
+          <strong>Clearer broker conversations</strong>
+          <p>A stronger foundation for asking the right questions and understanding what changed from last year.</p>
+        </div>
+        <div class="outcome-card">
+          <strong>Stronger internal review</strong>
+          <p>More useful summaries for administrators, finance leaders, board members, and stakeholders.</p>
+        </div>
+        <div class="outcome-card">
+          <strong>Less renewal confusion</strong>
+          <p>A calmer path through policies, loss runs, renewal dates, coverage terms, and final recommendations.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -627,12 +772,12 @@
       <div class="quote-note">
         <h2>Request a public sector insurance bid review</h2>
         <p>
-          Use this form as a starting point. We can connect it later to a dedicated email address or secure form once the domain is registered.
+          Share a few details about the organization, renewal timeline, and coverage questions. A focused review can help identify what should be clarified before bids are compared.
         </p>
         <ul class="check-list">
-          <li><span class="check">OK</span><span>Organization name, type, and renewal timeline.</span></li>
-          <li><span class="check">OK</span><span>Coverage types you want quoted or reviewed.</span></li>
-          <li><span class="check">OK</span><span>Current carrier, policies, loss runs, RFP concerns, or claims questions if available.</span></li>
+          <li><span class="check">ORG</span><span>Organization name, type, and renewal timeline.</span></li>
+          <li><span class="check">COV</span><span>Coverage types you want quoted or reviewed.</span></li>
+          <li><span class="check">RFP</span><span>Current carrier, policies, loss runs, RFP concerns, or claims questions if available.</span></li>
         </ul>
       </div>
 
@@ -680,7 +825,7 @@
           <textarea name="message" placeholder="Tell us about the organization, current insurance, bid request, renewal concerns, RFP timeline, or coverage questions."></textarea>
         </label>
         <button class="submit-button" type="submit">Send bid review request</button>
-        <p class="submit-note">Submissions are delivered to Public Sector Flow by email.</p>
+        <p class="submit-note">Submissions are delivered to Public Sector Flow by email. A dedicated domain email can be added later.</p>
       </form>
     </div>
   </section>
@@ -689,12 +834,12 @@
     <div class="section-inner">
       <div class="section-heading">
         <h2>Let's talk through the next public sector renewal.</h2>
-        <p>Use the live GitHub Pages site now. A custom domain and dedicated email can be added later when the project is ready.</p>
+        <p>Send a request, ask a renewal question, or start organizing the details needed for the next insurance bid conversation.</p>
       </div>
       <div class="contact-cards">
         <div class="contact-card"><span>Email</span><a href="mailto:publicsectorflow@gmail.com">publicsectorflow@gmail.com</a></div>
         <div class="contact-card"><span>Focus</span><a href="#industries">Schools and municipalities</a></div>
-        <div class="contact-card"><span>Current website</span><a href="https://samginz.github.io/publicsectorflow/">GitHub Pages</a></div>
+        <div class="contact-card"><span>Response path</span><a href="#quote">Secure form request</a></div>
       </div>
     </div>
   </section>
