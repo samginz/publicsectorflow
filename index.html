@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Public Sector Flow | Insurance Bid Support</title>
-  <meta name="description" content="Pre-RFP data preparation, exposure reviews, and commercial underwriting coordination for school boards, municipal managers, and public agencies facing complex renewals.">
+  <title>Public Sector Flow | Insurance Renewal and RFP Support</title>
+  <meta name="description" content="Insurance renewal and RFP support for schools, municipalities, public agencies, and public sector organizations that need help organizing information and preparing bid submissions.">
   <style>
     :root {
       --ink: #172233;
@@ -271,6 +271,27 @@
       font-size: 0.94rem;
     }
 
+    .approach-card {
+      max-width: 900px;
+      margin: 34px auto 0;
+      padding: 26px;
+      border-radius: var(--radius);
+      background: var(--white);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .approach-card h3 {
+      margin-bottom: 10px;
+      color: var(--blue);
+      font-size: 1.28rem;
+    }
+
+    .approach-card p {
+      margin-bottom: 0;
+      color: #334155;
+    }
+
     .pill-icon,
     .card-icon {
       flex: 0 0 auto;
@@ -416,6 +437,32 @@
       font-size: 0.94rem;
     }
 
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .faq-item {
+      padding: 22px;
+      border-radius: var(--radius);
+      background: var(--white);
+      border: 1px solid var(--line);
+      box-shadow: 0 10px 22px rgba(18, 50, 74, 0.08);
+    }
+
+    .faq-item h3 {
+      margin-bottom: 8px;
+      font-size: 1.05rem;
+      color: #162333;
+    }
+
+    .faq-item p {
+      margin-bottom: 0;
+      color: #536273;
+      font-size: 0.96rem;
+    }
+
     .quote-layout {
       display: grid;
       grid-template-columns: minmax(0, 0.85fr) minmax(340px, 1.15fr);
@@ -549,6 +596,7 @@
       .quote-layout,
       .grid-2,
       .grid-3,
+      .faq-grid,
       .reason-grid,
       .outcome-grid,
       .pill-grid,
@@ -582,13 +630,14 @@
     <div class="nav-inner">
       <div class="brand">Public Sector Flow</div>
       <div class="nav-links">
-        <a href="#about">The Approach</a>
-        <a href="#reasons">Why Pre-Review?</a>
-        <a href="#services">Diagnostics</a>
-        <a href="#coverage">Exposure Areas</a>
-        <a href="#industries">Entities Served</a>
-        <a href="#quote">Submit Submissions</a>
-        <a href="#quote" class="nav-cta">Analyze Current Placement</a>
+        <a href="#about">About</a>
+        <a href="#reasons">Reasons</a>
+        <a href="#services">Services</a>
+        <a href="#coverage">Coverage</a>
+        <a href="#industries">Who we help</a>
+        <a href="#faq">FAQ</a>
+        <a href="#quote">Request a review</a>
+        <a href="#quote" class="nav-cta">Send renewal request</a>
       </div>
     </div>
   </nav>
@@ -596,28 +645,28 @@
   <header class="hero" id="top">
     <div class="hero-inner">
       <div>
-        <div class="eyebrow">Pre-RFP Audit & Underwriting Data Alignment</div>
-        <h1>Before you run your next insurance RFP, get your exposure data organized.</h1>
+        <div class="eyebrow">Insurance renewal and RFP support for public organizations.</div>
+        <h1>Insurance renewal and RFP support for public organizations.</h1>
         <p class="hero-copy">
-          We help schools, municipalities, and public authorities clean up messy historical schedules, verify loss runs, and scrub exposure data before presenting to the commercial insurance market. Better data structure keeps carriers interested and prevents non-renewals.
+          We help schools, municipalities, and public agencies organize insurance information, evaluate coverage, and prepare clearer renewal and bid submissions.
         </p>
         <div class="actions">
-          <a class="button button-primary" href="#quote">Request Data Diagnostic</a>
-          <a class="button button-secondary" href="#services">Explore Diagnostic Support</a>
+          <a class="button button-primary" href="#quote">Send renewal request</a>
+          <a class="button button-secondary" href="#services">See how we help</a>
         </div>
       </div>
 
-      <div class="hero-panel" aria-label="Operational bottlenecks solved">
-        <h2>Fixing the pipeline before underwriters drop your file.</h2>
+      <div class="hero-panel" aria-label="Public sector insurance support summary">
+        <h2>Built for administrators who need clarity before the next RFP or renewal.</h2>
         <ul class="check-list">
-          <li><span class="check">90d</span><span>Scrub asset inventories and payroll rosters 90 days before your current package expires.</span></li>
-          <li><span class="check">Gap</span><span>Identify unfenced exposures like newly leased buildings or sub-contracted transit lines.</span></li>
-          <li><span class="check">Fit</span><span>Deliver a clean, verified data package directly to your selected brokers.</span></li>
+          <li><span class="check">RFP</span><span>Organize exposure data, schedules, loss runs, and current policies before bids are requested.</span></li>
+          <li><span class="check">REV</span><span>Evaluate limits, deductibles, exclusions, certificates, contracts, and claim concerns.</span></li>
+          <li><span class="check">BID</span><span>Prepare a clearer submission so brokers and carriers have the information needed to evaluate your organization.</span></li>
         </ul>
         <div class="mini-metrics">
-          <div class="metric"><strong>PEL</strong><span>Entity Liability</span></div>
-          <div class="metric"><strong>WC</strong><span>Statutory Comp</span></div>
-          <div class="metric"><strong>CY</strong><span>Network Risk</span></div>
+          <div class="metric"><strong>PEL</strong><span>Public entity liability</span></div>
+          <div class="metric"><strong>WC</strong><span>Workers comp</span></div>
+          <div class="metric"><strong>CY</strong><span>Cyber risk</span></div>
         </div>
       </div>
     </div>
@@ -626,21 +675,27 @@
   <section id="about">
     <div class="section-inner">
       <div class="section-heading">
-        <h2>Unlocking competitive premium options requires structural discipline.</h2>
-        <p>Brokers cannot fix a flawed risk profile. Carrier underwriters walk away from submissions with missing loss runs and messy schedules.</p>
+        <h2>Public sector insurance help with a clearer process.</h2>
+        <p>Practical guidance for organizations that want cleaner bid packages, better insurance comparisons, and a stronger handle on risk.</p>
       </div>
       <div class="about-text">
         <p>
-          Public entity commercial insurance has become a major line-item strain on annual operational budgets. When a school district or county presents unorganized, contradictory data to the market during a fast-tracked RFP window, carriers inflate their premium pricing to account for unknown factors, or they simply refuse to quote.
+          Public sector insurance is not just a yearly renewal. It affects board decisions, budget planning, contracts, school buildings, municipal property, employees, vehicles, public services, claims, and community trust.
         </p>
         <p>
-          We operate as an independent partner focused entirely on operational diagnostics. By auditing your structural claims history, fixing payroll misclassifications, and highlighting risk management milestones, we transform your historical records into an airtight data room. This forces brokers to bring their best pricing and terms to your negotiation table.
+          We help organize the information a broker or carrier needs, evaluate insurance questions and exclusions, and make the renewal or bidding process easier to understand. The goal is simple: protect the organization, reduce surprises, and give decision makers a clear comparison before they choose.
         </p>
       </div>
       <div class="pill-grid">
-        <div class="pill"><span class="pill-icon">$</span><span>Preventing arbitrary pricing penalties from underwriters.</span></div>
-        <div class="pill"><span class="pill-icon">!</span><span>Isolating hidden exclusions embedded in policy forms.</span></div>
-        <div class="pill"><span class="pill-icon">#</span><span>Building structured, audit-ready data packages.</span></div>
+        <div class="pill"><span class="pill-icon">$</span><span>Renewal and budget planning guidance.</span></div>
+        <div class="pill"><span class="pill-icon">!</span><span>Insurance question and risk assessment.</span></div>
+        <div class="pill"><span class="pill-icon">#</span><span>RFP-friendly keywords and bid preparation.</span></div>
+      </div>
+      <div class="approach-card">
+        <h3>Our approach</h3>
+        <p>
+          Every organization is different. We start by understanding your current policies, renewal timeline, property schedules, loss history, contracts, and insurance questions. From there, we help organize the information needed for a more informed renewal or bidding process.
+        </p>
       </div>
     </div>
   </section>
@@ -648,34 +703,34 @@
   <section class="soft" id="reasons">
     <div class="section-inner">
       <div class="section-heading">
-        <h2>Why entities separate data preparation from the active broker bidding loop</h2>
-        <p>Running a competitive bidding process using raw, unverified data often forces administrators into defensive, high-premium renewals.</p>
+        <h2>Top reasons public organizations use a bid preparation process</h2>
+        <p>A stronger insurance submission helps boards, administrators, and finance teams compare options with fewer surprises and fewer unanswered insurance questions.</p>
       </div>
       <div class="reason-grid">
         <div class="reason-card">
           <span class="reason-number">1</span>
-          <h3>Underwriting bottlenecks</h3>
-          <p>Carriers prioritize files that are complete on day one. Messy data gets pushed to the bottom of the pile.</p>
+          <h3>Cleaner RFP preparation</h3>
+          <p>Organize schedules, claims history, exposures, and insurance questions before markets are approached.</p>
         </div>
         <div class="reason-card">
           <span class="reason-number">2</span>
-          <h3>Scrubbing loss records</h3>
-          <p>We reconcile open reserves and stale claims data before it damages your loss-ratio metrics.</p>
+          <h3>Better bid comparison</h3>
+          <p>Look beyond price by comparing limits, deductibles, exclusions, carrier terms, and service expectations.</p>
         </div>
         <div class="reason-card">
           <span class="reason-number">3</span>
-          <h3>Catching quiet exclusions</h3>
-          <p>We call out sudden carve-outs in specialized coverages before the policy is bound and active.</p>
+          <h3>Fewer coverage surprises</h3>
+          <p>Surface gaps, exclusions, and confusing policy language before a claim, contract, or board question creates pressure.</p>
         </div>
         <div class="reason-card">
           <span class="reason-number">4</span>
-          <h3>Justifying board budgets</h3>
-          <p>Translate complex technical underwriting variables into plain-English answers for finance committees.</p>
+          <h3>Board-ready clarity</h3>
+          <p>Turn complex insurance details into practical talking points for budget and renewal conversations.</p>
         </div>
         <div class="reason-card">
           <span class="reason-number">5</span>
-          <h3>Enforcing RFP timelines</h3>
-          <p>Stop accepting multi-million dollar quotes delivered hours before expiration. Take back timeline control.</p>
+          <h3>More controlled timelines</h3>
+          <p>Reduce last-minute renewal stress by tracking key dates, missing items, and follow-up questions.</p>
         </div>
       </div>
     </div>
@@ -684,25 +739,25 @@
   <section id="services">
     <div class="section-inner">
       <div class="section-heading">
-        <h2>Operational Diagnostic Support</h2>
-        <p>Independent coordination designed to maximize market response and eliminate blind spots.</p>
+        <h2>What we help with</h2>
+        <p>Focused guidance around insurance bids, renewal prep, public entity risk, and coverage communication.</p>
       </div>
       <div class="grid-2">
         <div class="card">
-          <div class="card-top"><span class="card-icon">1</span><h3>Pre-RFP Structural Data Prep</h3></div>
-          <p>We audit and verify your statement of values, commercial vehicle counts, payroll logs, and five-year loss histories. You get a single, verified master file ready for broker distribution.</p>
+          <div class="card-top"><span class="card-icon">1</span><h3>Public sector bid preparation</h3></div>
+          <p>Prepare entity details, coverage needs, payroll, property schedules, vehicle lists, certificates, current policies, and loss runs so bids are easier to request and compare.</p>
         </div>
         <div class="card">
-          <div class="card-top"><span class="card-icon">2</span><h3>Form and Contract Analysis</h3></div>
-          <p>We cross-reference current certificates of insurance with your existing vendor agreements and joint-powers frameworks to ensure cross-indemnification actually holds up.</p>
+          <div class="card-top"><span class="card-icon">2</span><h3>Policy and coverage evaluation</h3></div>
+          <p>Evaluate existing limits, deductibles, endorsements, exclusions, interlocal agreements, vendor requirements, and renewal dates so you know what needs attention before bids go out.</p>
         </div>
         <div class="card">
-          <div class="card-top"><span class="card-icon">3</span><h3>Exposure Area Verification</h3></div>
-          <p>We isolate specific operational liabilities tied directly to public operations, evaluating physical plant valuations, specialized fleets, and multi-user facility exposures.</p>
+          <div class="card-top"><span class="card-icon">3</span><h3>Public entity risk assessment</h3></div>
+          <p>Identify common exposures tied to schools, municipalities, agencies, and districts, including property, liability, employees, vehicles, cyber risk, governance, and public services.</p>
         </div>
         <div class="card">
-          <div class="card-top"><span class="card-icon">4</span><h3>Renewal Lifecycle Management</h3></div>
-          <p>We set the calendar milestones, chase down delayed carrier reports, organize documentation, and make sure your internal teams aren't trapped in a last-minute scramble.</p>
+          <div class="card-top"><span class="card-icon">4</span><h3>Renewal and claims organization</h3></div>
+          <p>Organize renewal timelines, loss runs, claims history, COI needs, board questions, and follow-up items so the process feels more controlled and less reactive.</p>
         </div>
       </div>
     </div>
@@ -711,19 +766,19 @@
   <section id="coverage">
     <div class="section-inner">
       <div class="section-heading">
-        <h2>Core Exposure Fields Checked</h2>
-        <p>We review the line items that commonly drive budget overruns and unexpected gaps.</p>
+        <h2>Insurance areas public organizations commonly evaluate</h2>
+        <p>Clear language for common renewal, RFP, and board-level coverage conversations.</p>
       </div>
       <div class="grid-3">
-        <div class="card"><h3>Public Entity Liability</h3><p>Civil rights exposures, police professional, school board legal, public officials errors and omissions, and umbrella line placement.</p></div>
-        <div class="card"><h3>Real Estate & Infrastructure</h3><p>Correct replacement values, plant and equipment schedules, flood/seismic zone classifications, and co-insurance condition checks.</p></div>
-        <div class="card"><h3>Labor & Compensation</h3><p>Workers compensation payroll classifications, active safety program return-on-investment, and employment practices liability triggers.</p></div>
-        <div class="card"><h3>Fleet & Transit Risk</h3><p>District school buses, heavy emergency apparatus, utility trucks, non-owned auto liabilities, and telematics verification.</p></div>
-        <div class="card"><h3>Network & Data Infrastructure</h3><p>Ransomware response protocol validation, student or citizen privacy data maps, and standalone cyber liability placement.</p></div>
-        <div class="card"><h3>Surety & Compliance Bonds</h3><p>Statutory official bonds, public works performance bonds, and vendor insurance tracking workflows.</p></div>
-        <div class="card"><h3>Capital Improvements</h3><p>Scrubbing builders risk forms, renovation insurance terms, and owner-controlled insurance program (OCIP) considerations.</p></div>
-        <div class="card"><h3>Mobile Machinery Assets</h3><p>Inland marine floaters for field equipment, emergency communications hardware, and specialized leased tools.</p></div>
-        <div class="card"><h3>RFP Document Integrity</h3><p>Consolidating dynamic underwriting questionnaires so your internal team speaks with a single, clear voice to the market.</p></div>
+        <div class="card"><h3>Public entity liability</h3><p>General liability, law enforcement liability, educators legal liability, public officials liability, umbrella, and excess liability.</p></div>
+        <div class="card"><h3>Property and facilities</h3><p>School buildings, municipal property, equipment, flood concerns, property schedules, and declared values.</p></div>
+        <div class="card"><h3>People and employment</h3><p>Workers compensation, employment practices liability, employee dishonesty, safety programs, and loss-prevention support.</p></div>
+        <div class="card"><h3>Vehicles and fleets</h3><p>Public auto, buses, police vehicles, service vehicles, hired and non-owned auto, and equipment-related exposures.</p></div>
+        <div class="card"><h3>Cyber and data risk</h3><p>Cyber liability, ransomware readiness, privacy concerns, student or resident data, payment systems, and incident response.</p></div>
+        <div class="card"><h3>Bonds and contracts</h3><p>Surety bonds, public contract requirements, vendor insurance terms, certificates, and agreement-related insurance questions.</p></div>
+        <div class="card"><h3>Capital projects</h3><p>Builders risk, renovation work, construction exposures, project schedules, contractors, and owner-controlled questions.</p></div>
+        <div class="card"><h3>Equipment and inland marine</h3><p>Mobile equipment, tools, communications equipment, leased items, scheduled property, and equipment floater concerns.</p></div>
+        <div class="card"><h3>Bid and RFP readiness</h3><p>Coverage summaries, schedules, loss runs, renewal calendars, carrier questions, broker submissions, and board-ready comparisons.</p></div>
       </div>
     </div>
   </section>
@@ -731,14 +786,14 @@
   <section class="industries" id="industries">
     <div class="section-inner">
       <div class="section-heading">
-        <h2>Entities We Assist</h2>
-        <p>Operational data support tailored for leaders balancing strict public budgets with deep institutional accountability.</p>
+        <h2>Public sector groups we can support</h2>
+        <p>Focused support for organizations that carry public responsibilities, public assets, and public accountability.</p>
       </div>
       <div class="grid-2">
-        <div class="card industry-card"><h3>K-12 School Districts & Charters</h3><p>Managing specialized exposures including student transport, educators legal liability, campus property risks, and complex network data footprints.</p><strong>Primary objective: deliver comprehensive options to the board well before public budget deadlines.</strong></div>
-        <div class="card industry-card"><h3>Municipalities, Towns, & Counties</h3><p>Balancing diverse operations from police and public works to utilities, recreational spaces, and employment practices across multiple union groups.</p><strong>Primary objective: insulate civil services from volatile insurance market pricing swings.</strong></div>
-        <div class="card industry-card"><h3>Utility Authorities & Special Districts</h3><p>Assisting fire, water, housing, and regional transit districts with infrastructure management, complex asset tracking, and targeted coverage language.</p><strong>Primary objective: build highly accurate, defensible submission files for complex industrial risks.</strong></div>
-        <div class="card industry-card"><h3>Government Contractors & Nonprofits</h3><p>Supporting human service organizations and agencies operating under strict public funding mandates, matching terms to specific master contract requirements.</p><strong>Primary objective: ensure full compliance with funding sources, public entities, and active grants.</strong></div>
+        <div class="card industry-card"><h3>Schools and districts</h3><p>Public schools, charter schools, districts, administrators, student-related exposures, buses, property, cyber, and educators legal liability.</p><strong>Common ask: clear renewal options before board or budget review.</strong></div>
+        <div class="card industry-card"><h3>Municipalities and counties</h3><p>Townships, villages, cities, counties, police, public works, parks, utilities, public property, fleets, and employment-related exposures.</p><strong>Common ask: protect public services while managing insurance cost pressure.</strong></div>
+        <div class="card industry-card"><h3>Public authorities and districts</h3><p>Fire districts, water districts, transportation authorities, libraries, housing authorities, special districts, and quasi-public organizations.</p><strong>Common ask: build a cleaner submission for complex public risk.</strong></div>
+        <div class="card industry-card"><h3>Nonprofits serving public contracts</h3><p>Community providers, social service organizations, contractors to public agencies, healthcare programs, and grant-funded operations.</p><strong>Common ask: coverage that satisfies contracts, funders, and operational needs.</strong></div>
       </div>
     </div>
   </section>
@@ -746,25 +801,52 @@
   <section class="outcome-band" id="outcomes">
     <div class="section-inner">
       <div class="section-heading">
-        <h2>What to expect from a disciplined data setup</h2>
-        <p>No magical premium drops — just practical operational leverage to protect your bottom line.</p>
+        <h2>Common outcomes from a more organized renewal</h2>
+        <p>Public Sector Flow is built around practical improvements, not inflated promises.</p>
       </div>
       <div class="outcome-grid">
         <div class="outcome-card">
-          <strong>Underwriters quote faster</strong>
-          <p>Clean, verified data rooms skip the endless back-and-forth clarification emails, putting your file first.</p>
+          <strong>More complete submissions</strong>
+          <p>Fewer missing schedules, unclear exposures, or unanswered questions before bids are requested.</p>
         </div>
         <div class="outcome-card">
-          <strong>Brokers lose excuses</strong>
-          <p>With an independent, accurate data baseline, you can judge brokers on their actual market access and negotiation skill.</p>
+          <strong>Clearer broker conversations</strong>
+          <p>A stronger foundation for asking the right questions and understanding what changed from last year.</p>
         </div>
         <div class="outcome-card">
-          <strong>Board presentations get simple</strong>
-          <p>You can clearly point to verified asset schedules and historic loss runs to justify coverage decisions to taxpayers.</p>
+          <strong>Stronger internal review</strong>
+          <p>More useful summaries for administrators, finance leaders, board members, and stakeholders.</p>
         </div>
         <div class="outcome-card">
-          <strong>We kill the renewal panic</strong>
-          <p>Establishing clear, structured timelines breaks the cycle of reviewing multi-million dollar premiums on 48 hours notice.</p>
+          <strong>Less renewal confusion</strong>
+          <p>A calmer path through policies, loss runs, renewal dates, coverage terms, exclusions, and final recommendations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="soft" id="faq">
+    <div class="section-inner">
+      <div class="section-heading">
+        <h2>Frequently asked questions</h2>
+        <p>Simple answers for organizations preparing for a renewal, RFP, or insurance discussion.</p>
+      </div>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3>When should we begin preparing for renewal?</h3>
+          <p>Many public organizations begin gathering information 90 to 120 days before renewal, especially if an RFP or board review is involved.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What documents should we have ready?</h3>
+          <p>Helpful items include current policies, schedules, loss runs, payroll estimates, vehicle lists, property values, contracts, and current insurance questions.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Can you review our current insurance before we issue an RFP?</h3>
+          <p>Yes. An early review can help clarify missing information, insurance concerns, and questions that should be addressed before bids are compared.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Which types of public organizations do you work with?</h3>
+          <p>We focus on schools, municipalities, public authorities, districts, counties, and organizations that serve public contracts.</p>
         </div>
       </div>
     </div>
@@ -773,61 +855,62 @@
   <section id="quote">
     <div class="section-inner quote-layout">
       <div class="quote-note">
-        <h2>Initiate a Pre-RFP Diagnostic Review</h2>
+        <h2>Request an insurance renewal review</h2>
         <p>
-          Tell us about your renewal calendar, entity size, and the specific exposure questions currently causing friction. We will trace the bottlenecks before you approach the market.
+          Share a few details about the organization, renewal timeline, and insurance questions. A focused review can help identify what should be clarified before bids are compared.
         </p>
         <ul class="check-list">
-          <li><span class="check">TIM</span><span>Your hard renewal dates and target RFP release targets.</span></li>
-          <li><span class="check">LIN</span><span>The specific coverage lines driving your current cost concerns.</span></li>
-          <li><span class="check">DOC</span><span>Current asset lists, loss runs, or broker issues if you want immediate focus.</span></li>
+          <li><span class="check">ORG</span><span>Organization name, type, and renewal timeline.</span></li>
+          <li><span class="check">COV</span><span>Coverage types you want quoted or evaluated.</span></li>
+          <li><span class="check">RFP</span><span>Current carrier, policies, loss runs, RFP concerns, or claims questions if available.</span></li>
         </ul>
       </div>
 
       <form action="https://formspree.io/f/mvzjkyeo" method="POST">
         <input type="hidden" name="_subject" value="New Public Sector Flow bid review request">
         <div class="form-row">
-          <label>Organization Name
-            <input name="organization_name" type="text" autocomplete="organization" required>
+          <label>Organization name
+            <input name="organization_name" type="text" autocomplete="organization">
           </label>
-          <label>Contact Name
-            <input name="contact_name" type="text" autocomplete="name" required>
+          <label>Contact name
+            <input name="contact_name" type="text" autocomplete="name">
           </label>
         </div>
         <div class="form-row">
-          <label>Official Email
-            <input name="email" type="email" autocomplete="email" required>
+          <label>Email
+            <input name="email" type="email" autocomplete="email">
           </label>
-          <label>Direct Phone
+          <label>Phone
             <input name="phone" type="tel" autocomplete="tel">
           </label>
         </div>
         <div class="form-row">
-          <label>Entity Category
-            <input name="organization_type" type="text" placeholder="County, K-12 District, Authority..." required>
+          <label>Organization type
+            <input name="organization_type" type="text" placeholder="School, municipality, authority, nonprofit...">
           </label>
-          <label>Target Renewal Date
-            <input name="renewal_date" type="text" placeholder="MM/DD/YYYY" required>
+          <label>Renewal date
+            <input name="renewal_date" type="text" placeholder="Month / year or exact date">
           </label>
         </div>
-        <label>Primary Exposure Line Needing Review
-          <select name="coverage_needed" required>
-            <option value="">Select primary focus...</option>
-            <option>Public Entity General Liability</option>
-            <option>School Board / Educators Legal</option>
-            <option>Workers Compensation (Statutory)</option>
-            <option>Commercial Property & Plant Valuations</option>
-            <option>Fleet / Emergency Vehicle Auto Line</option>
-            <option>Cyber Risk & Network Infrastructure</option>
-            <option>Excess Liability Layering</option>
-            <option>Full Multi-Line Submissions Audit</option>
+        <label>Insurance needed
+          <select name="coverage_needed">
+            <option value="">Select one</option>
+            <option>Public entity liability</option>
+            <option>Educators legal liability</option>
+            <option>Workers compensation</option>
+            <option>Property coverage</option>
+            <option>Public auto / fleet</option>
+            <option>Cyber liability</option>
+            <option>Umbrella / excess liability</option>
+            <option>Multiple coverages</option>
+            <option>Not sure yet</option>
           </select>
         </label>
-        <label>Detail your active operational bottlenecks or specific renewal pressures
-          <textarea name="message" placeholder="Please outline any outstanding claims issues, known property valuation challenges, or specific timeline constraints you are currently tracking."></textarea>
+        <label>What are you looking for?
+          <textarea name="message" placeholder="Tell us about the organization, current insurance, bid request, renewal concerns, RFP timeline, or insurance questions."></textarea>
         </label>
-        <button class="submit-button" type="submit">Submit Data Request</button>
-        <p class="submit-note">Submissions route directly into the Public Sector Flow diagnostic portal.</p>
+        <button class="submit-button" type="submit">Send renewal request</button>
+        <p class="submit-note">Submissions are delivered directly to Public Sector Flow.</p>
       </form>
     </div>
   </section>
@@ -835,19 +918,19 @@
   <section class="contact" id="contact">
     <div class="section-inner">
       <div class="section-heading">
-        <h2>Establish control over your underwriting cycle.</h2>
-        <p>Drop us a line, point out an active coverage concern, or ask us how to structure your historical data records for the next renewal cycle.</p>
+        <h2>Let's talk through the next public sector renewal.</h2>
+        <p>Send a request, ask a renewal question, or start organizing the details needed for the next insurance bid conversation.</p>
       </div>
       <div class="contact-cards">
-        <div class="contact-card"><span>Direct Desk</span><a href="mailto:publicsectorflow@gmail.com">publicsectorflow@gmail.com</a></div>
-        <div class="contact-card"><span>Domain Focus</span><a href="#industries">Public Infrastructure & Education</a></div>
-        <div class="contact-card"><span>Operational Path</span><a href="#quote">Secure Asset Diagnostics Form</a></div>
+        <div class="contact-card"><span>Email</span><a href="mailto:publicsectorflow@gmail.com">publicsectorflow@gmail.com</a></div>
+        <div class="contact-card"><span>Focus</span><a href="#industries">Schools and municipalities</a></div>
+        <div class="contact-card"><span>Response path</span><a href="#quote">Secure form request</a></div>
       </div>
     </div>
   </section>
 
   <footer>
-    <div>Copyright 2026 Public Sector Flow | <a href="#top">Return to Top</a></div>
+    <div>Copyright 2026 Public Sector Flow | <a href="#top">Back to top</a></div>
   </footer>
 </body>
 </html>
