@@ -557,6 +557,7 @@
       .nav-links { display: none; }
       .hero-inner,
       .quote-layout,
+      .form-row,
       .grid-2,
       .grid-3,
       .faq-grid,
@@ -579,7 +580,6 @@
         gap: 28px;
       }
       .actions,
-      .form-row,
       .mini-metrics {
         grid-template-columns: 1fr;
       }
@@ -604,7 +604,7 @@
   <header class="hero" id="top">
     <div class="hero-inner">
       <div>
-        <div class="eyebrow">Insurance renewal and RFP support for public organizations.</div>
+        <div class="eyebrow">Public sector risk and renewal support.</div>
         <h1>Insurance renewal and RFP support for public organizations.</h1>
         <p class="hero-copy">
           We help schools, municipalities, and public agencies organize insurance information, evaluate coverage, and prepare clearer renewal or RFP submissions.
@@ -746,7 +746,7 @@
         <input type="hidden" name="_subject" value="New Public Sector Flow bid review request">
         <div class="form-row">
           <label>Organization name
-            <input name="organization_name" type="text" autocomplete="organization">
+            <input name="organization_name" type="text" autocomplete="organization" required>
           </label>
           <label>Contact name
             <input name="contact_name" type="text" autocomplete="name">
@@ -754,7 +754,7 @@
         </div>
         <div class="form-row">
           <label>Email
-            <input name="email" type="email" autocomplete="email">
+            <input name="email" type="email" autocomplete="email" required>
           </label>
           <label>Phone
             <input name="phone" type="tel" autocomplete="tel">
